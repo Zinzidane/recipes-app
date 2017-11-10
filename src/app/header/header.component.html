@@ -1,9 +1,14 @@
-<nav class="navbar navbar-default">
+<nav class="nav navbar-inverse" style="margin-bottom: 30px;">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a href="#" class="navbar-brand">Recipe Book</a>
     </div>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li>
           <a href="#" (click)="onSelect('recipe')">Recipes</a>
@@ -13,7 +18,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li class="dropdown" appDropdown>
           <a href="#" class="dropdown-toggle" role="button">Manage
             <span class="caret"></span>
           </a>
