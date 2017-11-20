@@ -1,4 +1,5 @@
 import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
@@ -46,7 +47,7 @@ import { SigninComponent } from './auth/signin/signin.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService],
+  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

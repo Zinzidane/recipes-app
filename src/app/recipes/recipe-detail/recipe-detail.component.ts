@@ -1,3 +1,4 @@
+import { AuthService } from '../../auth/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from '../recipe.model';
@@ -14,7 +15,8 @@ export class RecipeDetailComponent implements OnInit {
 
   constructor(private recipeService: RecipeService, 
               private route: ActivatedRoute, 
-              private router: Router) {
+              private router: Router,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
