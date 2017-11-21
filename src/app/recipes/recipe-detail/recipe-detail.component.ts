@@ -13,8 +13,8 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
   id: number;
 
-  constructor(private recipeService: RecipeService, 
-              private route: ActivatedRoute, 
+  constructor(private recipeService: RecipeService,
+              private route: ActivatedRoute,
               private router: Router,
               private authService: AuthService) {
   }
@@ -40,5 +40,9 @@ export class RecipeDetailComponent implements OnInit {
   onDeleteRecipe() {
     this.recipeService.deleteRecipe(this.id);
     this.router.navigate(['/recipes']); // for navigating up after deleting recipe
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 }
