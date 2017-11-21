@@ -13,12 +13,12 @@ export class RecipeService {
         'Roasted chicken', 
         'So delicious', 
         'https://upload.wikimedia.org/wikipedia/commons/1/1b/Roasted_Chicken_Dinner_Plate%2C_Broccoli%2C_Demi_Glace.jpg',
-        [new Ingredient('Chicken', 1), new Ingredient('Broccoli', 4)]),
+        [new Ingredient('Chicken', 1, 'pieces'), new Ingredient('Broccoli', 4, 'pieces')]),
       new Recipe(
         'Apple Pie', 
         'Never never gonna give you up!', 
         'https://upload.wikimedia.org/wikipedia/commons/f/f2/Chicken_Pie.JPG',
-        [new Ingredient('Apple', 3), new Ingredient('Eggs', 4), new Ingredient('Sugar', 1)])
+        [new Ingredient('Apple', 3, 'pieces'), new Ingredient('Eggs', 4, 'pieces'), new Ingredient('Sugar', 1, 'glass')])
   ];
 
   constructor(private slService: ShoppingListService) {} 
