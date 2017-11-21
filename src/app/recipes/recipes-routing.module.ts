@@ -17,6 +17,9 @@ const recipesRoute: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forChild(recipesRoute) ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  providers: [
+    AuthGuard
+  ]
 })
 export class RecipesRoutingModule {}
