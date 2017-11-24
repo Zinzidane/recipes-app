@@ -12,20 +12,15 @@ export class DataStorageService {
 
   storeRecipes() {
     const token = this.authService.getToken();
-
-/*     return this.httpClient.put('https://recipe-book-a8717.firebaseio.com/recipes.json', this.recipeService.getRecipes(), {
-      observe: 'body',
-      params: new HttpParams().set('auth', token)
-    }); */
     const req = new HttpRequest('PUT', 'https://recipe-book-a8717.firebaseio.com/recipes.json', this.recipeService.getRecipes(),
-      {reportProgress: true, params: new HttpParams().set('auth', token)});
+      {reportProgress: true});
     return this.httpClient.request(req);
   }
 
   getRecipes() {
     const token = this.authService.getToken();
 
-    return this.httpClient.get<Recipe[]>('https://recipe-book-a8717.firebaseio.com/recipes.json?auth=' + token, {
+    return this.httpClient.get<Recipe[]>('https://recipe-book-a8717.firebaseio.com/recipes.json', {
       observe: 'response',
       responseType: 'json'
     })
