@@ -1,21 +1,27 @@
+import { Subject } from 'rxjs/Subject';
+
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
-import { Subject } from 'rxjs/Subject';
 
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
-      new Recipe(
-        'Roasted chicken',
-        'So delicious',
-        'https://upload.wikimedia.org/wikipedia/commons/1/1b/Roasted_Chicken_Dinner_Plate%2C_Broccoli%2C_Demi_Glace.jpg',
-        [new Ingredient('Chicken', 1, 'pieces'), new Ingredient('Broccoli', 4, 'pieces')]),
-      new Recipe(
-        'Apple Pie',
-        'Never never gonna give you up!',
-        'https://upload.wikimedia.org/wikipedia/commons/f/f2/Chicken_Pie.JPG',
-        [new Ingredient('Apple', 3, 'pieces'), new Ingredient('Eggs', 4, 'pieces'), new Ingredient('Sugar', 1, 'glass')])
+    new Recipe(
+      'Tasty Schnitzel',
+      'A super-tasty Schnitzel - just awesome!',
+      'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
+      [
+        new Ingredient('Meat', 1, 'piece'),
+        new Ingredient('French Fries', 20, 'pieces')
+      ]),
+    new Recipe('Big Fat Burger',
+      'What else you need to say?',
+      'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg',
+      [
+        new Ingredient('Buns', 2, 'pieces'),
+        new Ingredient('Meat', 1, 'piece')
+      ])
   ];
 
   constructor() {}
@@ -42,7 +48,7 @@ export class RecipeService {
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
   }
-  
+
   deleteRecipe(index: number) {
     this.recipes.splice(index, 1);
     this.recipesChanged.next(this.recipes.slice());

@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { ShoppingListComponent } from './shopping-list.component';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 
-
 @NgModule({
   declarations: [
     ShoppingListComponent,

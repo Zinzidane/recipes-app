@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -19,4 +20,5 @@ export class SigninComponent implements OnInit {
     const password = form.value.password;
     this.authService.signinUser(email, password);
   }
+
 }
