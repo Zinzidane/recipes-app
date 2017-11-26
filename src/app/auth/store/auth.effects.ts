@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Actions, Effect } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/mergeMap';
 import { fromPromise } from 'rxjs/observable/fromPromise';
@@ -48,7 +49,7 @@ export class AuthEffects {
       return fromPromise(firebase.auth().currentUser.getIdToken());
     })
     .mergeMap((token: string) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/recipes']);
       return [
         {
           type: AuthActions.SIGNIN
@@ -58,6 +59,13 @@ export class AuthEffects {
           payload: token
         }
       ];
+    });
+
+  @Effect({dispatch: false})// don't plan to dispatch new effect at the end of this effect
+  authLogout = this.actions$
+    .ofType(AuthActions.LOGOUT)
+    .do(() => {
+      this.router.navigate(['/']);
     });
 
   constructor(private actions$: Actions, private router: Router) {}
