@@ -27,8 +27,8 @@ const initialState: State = {
         new Ingredient('Buns', 2, 'pieces'),
         new Ingredient('Meat', 1, 'piece')
       ])
-  ];
-}
+  ]
+};
 
 export function recipeReducer(state = initialState, action: RecipeActions.RecipeActions) {
   switch (action.type) {
