@@ -1,11 +1,15 @@
 import { Ingredient } from '../../shared/ingredient.model';
 import { Recipe } from '../recipe.model';
 
+export interface FeatureState {
+  recipes: State;
+}
+
 export interface State {
   recipes: Recipe[];
 }
 
-export const state: State = {
+const initialState: State = {
   recipes: [
     new Recipe(
       'Tasty Schnitzel',
@@ -25,6 +29,6 @@ export const state: State = {
   ];
 }
 
-export function recipeReducer(state, action) {
+export function recipeReducer(state = initialState, action) {
   return state;
 }
