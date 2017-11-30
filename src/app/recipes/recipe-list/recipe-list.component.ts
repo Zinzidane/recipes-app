@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs/Observable';
 import * as fromRecipe from '../store/recipe.reducers';
+import * as fromAuth from '../../auth/store/auth.reducers';
 
 @Component({
   selector: 'app-recipe-list',
@@ -11,6 +12,7 @@ import * as fromRecipe from '../store/recipe.reducers';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
+  authState: Observable<fromAuth.State>;
   recipeState: Observable<fromRecipe.State>;
 
   constructor(private router: Router,
@@ -19,6 +21,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authState = this.store.select('auth');
     this.recipeState = this.store.select('recipes');
   }
 

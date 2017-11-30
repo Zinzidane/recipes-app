@@ -19,14 +19,17 @@ const initialState: State = {
       'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
       [
         new Ingredient('Meat', 1, 'piece'),
-        new Ingredient('French Fries', 20, 'pieces')
+        new Ingredient('French Fries', 20, 'pieces'),
+        new Ingredient('Lemon', 2, 'slices'),
       ]),
     new Recipe('Big Fat Burger',
       'What else you need to say?',
       'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg',
       [
         new Ingredient('Buns', 2, 'pieces'),
-        new Ingredient('Meat', 1, 'piece')
+        new Ingredient('Meat', 1, 'piece'),
+        new Ingredient('Cabbage', 1, 'slice'),
+        new Ingredient('Cheese', 1, 'slice'),
       ])
   ]
 };

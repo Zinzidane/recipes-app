@@ -1,10 +1,14 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">Recipe Book</a>
+      <button class="navbar-toggle" type="button" (click)="onToggleMenu()">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerlink="/" style="cursor: pointer;">Recipe Book</a>
     </div>
-
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" [ngClass]="{'in': toggleMenu}">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
         <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>

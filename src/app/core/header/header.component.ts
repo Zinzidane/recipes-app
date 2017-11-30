@@ -13,8 +13,17 @@ import * as RecipeActions from '../../recipes/store/recipe.actions';
 })
 export class HeaderComponent implements OnInit {
   authState: Observable<fromAuth.State>;
+  toggleMenu = false;
 
   constructor(private store: Store<fromApp.AppState>) {
+  }
+
+  onToggleMenu() {
+    if(this.toggleMenu === true) {
+      this.toggleMenu = false;
+    } else {
+      this.toggleMenu = true;
+    }
   }
 
   ngOnInit() {
